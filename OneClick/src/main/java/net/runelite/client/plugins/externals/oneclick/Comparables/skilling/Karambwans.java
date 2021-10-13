@@ -18,13 +18,13 @@ public class Karambwans extends ClickCompare
 	@Override
 	public void modifyEntry(MenuEntry event)
 	{
-		if (findItem(ItemID.RAW_KARAMBWAN).getLeft() == -1)
+		if (findItem(ItemID.RAW_LOBSTER).getLeft() == -1)
 		{
 			return;
 		}
 		MenuEntry e = event.clone();
 		e.setOption("Use");
-		e.setTarget("<col=ff9040>Raw karambwan<col=ffffff> -> " + getTargetMap().get(e.getIdentifier()));
+		e.setTarget("<col=ff9040>Raw lobster<col=ffffff> -> " + getTargetMap().get(e.getIdentifier()));
 		e.setForceLeftClick(true);
 		insert(e);
 	}
@@ -33,13 +33,13 @@ public class Karambwans extends ClickCompare
 	public boolean isClickValid(MenuOptionClicked event)
 	{
 		return event.getMenuAction() == MenuAction.GAME_OBJECT_FIRST_OPTION &&
-			event.getMenuTarget().contains("<col=ff9040>Raw karambwan<col=ffffff> -> ");
+			event.getMenuTarget().contains("<col=ff9040>Raw lobster<col=ffffff> -> ");
 	}
 
 	@Override
 	public void modifyClick(MenuOptionClicked event)
 	{
-		if (updateSelectedItem(ItemID.RAW_KARAMBWAN) && plugin != null)
+		if (updateSelectedItem(ItemID.RAW_LOBSTER) && plugin != null)
 		{
 			event.setMenuAction(MenuAction.ITEM_USE_ON_GAME_OBJECT);
 			plugin.setTick(true);
@@ -49,12 +49,12 @@ public class Karambwans extends ClickCompare
 	@Override
 	public void backupEntryModify(MenuEntry e)
 	{
-		if (findItem(ItemID.RAW_KARAMBWAN).getLeft() == -1)
+		if (findItem(ItemID.RAW_LOBSTER).getLeft() == -1)
 		{
 			return;
 		}
 		e.setOption("Use");
-		e.setTarget("<col=ff9040>Raw karambwan<col=ffffff> -> " + getTargetMap().get(e.getIdentifier()));
+		e.setTarget("<col=ff9040>Raw lobster<col=ffffff> -> " + getTargetMap().get(e.getIdentifier()));
 		e.setForceLeftClick(true);
 		insert(e);
 	}
